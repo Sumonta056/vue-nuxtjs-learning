@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+
+@theme {
+  --font-family: "Poppins", sans-serif;
+  --grid-template-columns-70-30: 70% 28%;
+}
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
