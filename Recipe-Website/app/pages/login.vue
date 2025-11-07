@@ -5,11 +5,11 @@ definePageMeta({
 
 const store = useStore();
 const router = useRouter();
-const email = ref("");
+const username = ref("");
 const password = ref("");
 
 const login = () => {
-  store.setUser(email.value, password.value);
+  store.setUser(username.value, password.value);
   console.log(store.user);
   router.push("/profile");
 };
@@ -24,16 +24,16 @@ const login = () => {
       <form @submit.prevent="login">
         <div class="mb-5">
           <label
-            for="email"
+            for="username"
             class="block mb-2 text-sm font-semibold text-gray-700"
-            >Email</label
+            >GitHub Username</label
           >
           <input
-            type="email"
-            v-model="email"
-            id="email"
+            type="text"
+            v-model="username"
+            id="username"
             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:outline-none transition"
-            placeholder="Enter your email"
+            placeholder="Enter your GitHub Username"
             required
           />
         </div>

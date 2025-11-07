@@ -14,6 +14,7 @@ const navItems = [
   "Ingredients",
   "Shopping List",
   "Settings",
+  "Login",
 ];
 </script>
 

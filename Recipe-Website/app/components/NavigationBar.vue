@@ -22,39 +22,34 @@ const logout = () => {
     <NuxtLink to="/" class="nav-link" v-if="navItems.includes('Home')"
       >Home</NuxtLink
     >
-    <NuxtLink to="/Profile" class="nav-link" v-if="navItems.includes('Profile')"
-      >Profile</NuxtLink
-    >
-    <NuxtLink to="/Recipes" class="nav-link" v-if="navItems.includes('Recipes')"
+
+    <NuxtLink to="/recipe" class="nav-link" v-if="navItems.includes('Recipes')"
       >Recipes</NuxtLink
     >
-    <NuxtLink
-      to="/Ingredients"
-      class="nav-link"
-      v-if="navItems.includes('Ingredients')"
-      >Ingredients</NuxtLink
-    >
+
     <NuxtLink
       to="/Shopping-List"
       class="nav-link"
       v-if="navItems.includes('Shopping List')"
       >Shopping List</NuxtLink
     >
-    <NuxtLink
-      to="/Settings"
-      class="nav-link"
-      v-if="navItems.includes('Settings')"
-      >Settings</NuxtLink
+
+    <NuxtLink to="/Profile" class="nav-link" v-if="navItems.includes('Profile')"
+      >Profile</NuxtLink
     >
+
     <button
       @click="logout"
       class="nav-link nav-link--logout"
-      v-if="navItems.includes('Logout')"
+      v-if="navItems.includes('Logout') && store.user.username != ''"
     >
       Logout
     </button>
 
-    <NuxtLink to="/Login" class="nav-link" v-if="navItems.includes('Login')"
+    <NuxtLink
+      to="/Login"
+      class="nav-link nav-link--logout"
+      v-if="navItems.includes('Login') & (store.user.username == '')"
       >Login</NuxtLink
     >
   </nav>
@@ -69,7 +64,7 @@ const logout = () => {
   padding: 1rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
+
   flex-wrap: wrap;
 }
 
