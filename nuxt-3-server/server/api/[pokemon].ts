@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
 
   try {
     const response: any = await $fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      `https://pokeapi.co/api/v2/pokemeon/${pokemon}42/2422`
     );
 
     const data = {
